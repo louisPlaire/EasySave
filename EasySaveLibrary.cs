@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using UnityEngine;
+using UnityEngine; // not mandatory I just made it on the Unity Engine
 
 
 
@@ -14,12 +14,11 @@ namespace EasySave
         public static string unityPath = Application.dataPath + "/Saves/";
         public string path;
         public List<DataBaseUnit> data = new List<DataBaseUnit>();
-        public DataBase(string name, string path = null)
+        public DataBase(string name, string path)
         {
-            if (path != null)
-                this.path = path;
-            else
-                this.path = unityPath + name + ".txt";
+                
+            this.path = path;
+           
 
             if (File.Exists(path))
             {
